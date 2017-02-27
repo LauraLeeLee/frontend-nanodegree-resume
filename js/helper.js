@@ -116,7 +116,6 @@ function initializeMap() {
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
-
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
@@ -167,7 +166,6 @@ function initializeMap() {
       position: placeData.geometry.location,
       title: name
     });
-
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
@@ -178,8 +176,11 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
-      //infoWindow.open(map, marker);
-      infoWindow.setContent('<h6>' + marker.title + '</h6>');
+      var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + marker.title + '';
+      infoWindow.open(map, marker);
+      infoWindow.setContent('<div class="infoWindow">' +'<h6>' + marker.title + '</h6>'+
+                      '<br>' +
+                      '<img class="bgimg" src="' + streetviewUrl + '">');
     });
 
     // this is where the pin actually gets added to the map.

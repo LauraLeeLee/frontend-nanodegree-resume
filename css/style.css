@@ -175,6 +175,27 @@ span {
   text-align: center;
 }
 
+/*styling for the onClick window in maps*/
+.infoWindow {
+    width: 250px;
+    background: #b300b3;
+    background: -webkit-radial-gradient( #990099, #fff);
+    background: -o-radial-gradient(#990099, #fff);
+    background: -moz-radial-gradient(#990099, #fff);
+    background: radial-gradient(#990099, #fff);
+    text-align: center;
+}
+h6 {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.bgimg {
+  width: 90%;
+  padding: 10px 0 10px 10px;
+  margin-top: -20px;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
