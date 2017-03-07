@@ -180,8 +180,7 @@ education.display= function(){
     $("#education").append(HTMLschoolStart);
     var formattedOnlineTitle= HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
     var formattedOnlineSchool= HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school);
-    var formattedOnlineURL= HTMLonlineURL.replace("%data%",education.onlineCourses[i].url);
-    var formattedOnlineURL = HTMLonlineURL.replace("#", education.onlineCourses[i].url);
+    var formattedOnlineURL= HTMLonlineURL.replace("%data%",education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
     var formattedOnlineDates= HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
     $(".education-entry:last").append(formattedOnlineTitle);
     $(".education-entry:last").append(formattedOnlineSchool);
