@@ -1,8 +1,8 @@
 var bio ={
     "name": "Laura Logan",
     "role": "Frontend Web Developer",
-    "welcomeMessage": "Life is like a box of chocolates",
-    "biopic":"images/fry.jpg ",
+    "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
+    "biopic":"images/me.jpg ",
     "contacts": {
       "mobile": "724-272-xxxx",
       "email": "LauraRDH@aol.com",
@@ -81,10 +81,10 @@ var work = {
 var projects = {
      "projects": [
        {
-       "title": "Roma",
-       "dates": "August 2015",
-       "description": "Journey through the Eternal City",
-       "images": ["images/colosseum.jpg", "images/colosseum.jpg"
+       "title": "Portfolio Project",
+       "dates": "December, 2016",
+       "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
+       "images": ["images/portfolio1.jpg", "images/portfolio2.jpg"
         ]
       },
       {
@@ -181,11 +181,14 @@ education.display= function(){
     var formattedOnlineTitle= HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
     var formattedOnlineSchool= HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school);
     var formattedOnlineURL= HTMLonlineURL.replace("%data%",education.onlineCourses[i].url);
+    var formattedOnlineURL = HTMLonlineURL.replace("#", education.onlineCourses[i].url);
     var formattedOnlineDates= HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
     $(".education-entry:last").append(formattedOnlineTitle);
     $(".education-entry:last").append(formattedOnlineSchool);
     $(".education-entry:last").append(formattedOnlineDates);
     $(".education-entry:last").append(formattedOnlineURL);
+    // $(".education-entry:last").append(formattedOnlineURL);
+
   }
  }; education.display();
 
