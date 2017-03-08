@@ -2,7 +2,7 @@ var bio ={
     "name": "Laura Logan",
     "role": "Frontend Web Developer",
     "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
-    "biopic":"images/me.jpg ",
+    "biopic":"images/me-400x250_xsmall.jpg",
     "contacts": {
       "mobile": "724-272-xxxx",
       "email": "LauraRDH@aol.com",
@@ -27,32 +27,32 @@ var education = {
       {
       "title": "Frontend Web Development",
       "school":"Udacity",
-      "url":"www.udacity.com",
+      "url":"https://www.udacity.com",
       "dates": "2016-2017"
       },
       {
       "title": "Intro to JavaScript",
       "school":"Code School",
       "dates": "January 2017",
-      "url":"www.codeschool.com"
+      "url":"http//www.codeschool.com"
      },
       {
       "title": "Introduction to CSS3 and HTML5",
       "school":"Ed2Go",
       "dates": "March 2016-April 2016",
-      "url":"www.ed2go.com"
+      "url":"http://www.ed2go.com"
     },
     {
     "title": "Intermediate CSS3 and HTML5",
     "school":"Ed2Go",
     "dates": "May 2016-June 2016",
-    "url":"www.ed2go.com"
+    "url":"http://www.ed2go.com"
     },
     {
     "title": "Introduction to JavaScript",
     "school":"Ed2Go",
     "dates": "July 2016-August 2016",
-    "url":"www.ed2go.com"
+    "url":"http://www.ed2go.com"
     }
     ]
 };
@@ -84,21 +84,21 @@ var projects = {
        "title": "Portfolio Project",
        "dates": "December, 2016",
        "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
-       "images": ["images/portfolio1.jpg", "images/portfolio2.jpg"
+       "images": ["images/portfolio1-400x250_xsmall.png", "images/porfolio2-400x250_xsmall.png"
         ]
       },
       {
       "title": "Roma",
       "dates": "August 2015",
       "description": "Journey through the Eternal City",
-      "images": ["images/colosseum.jpg", "images/colosseum.jpg"
+      "images": ["images/rome1-400x250_xsmall.jpg", "images/rome2-400x250_xsmall.jpg","images/rome3-400x250_xsmall.jpg"
        ]
       },
       {
        "title": "Fiorenze",
        "dates": "September 2011",
        "description": "Discovery of Renessaince history",
-       "images":["images/florence1.jpg","images/florence2.jpg","images/florence3.jpg"
+       "images":["images/florence3-400x250_xsmall.jpg","images/florence4-400x250_xsmall.jpg","images/florence3.jpg"
         ]
      }
   ]

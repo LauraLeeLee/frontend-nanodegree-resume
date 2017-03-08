@@ -78,6 +78,10 @@ h2 {
   padding: 10px;
 }
 
+#lets-connect h2 {
+  color: white;
+}
+
 h3 {
   font-size: 20px;
   color: #000;
@@ -225,13 +229,17 @@ a {
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: 1px;
+  margin-right: 5px;
   width: 200px;
   display: none;
+  border: 3px double #fff;
 }
 
 img {
@@ -265,6 +273,20 @@ h6 {
   width: 90%;
   padding: 10px 0 10px 10px;
   margin-top: -20px;
+}
+
+#social li {
+  display: inline-block;
+}
+
+/* social icons */
+[class*="entypo-"]:before {
+  color: white;
+  display: inline-block;
+  font-family: 'entypo', sans-serif;
+  font-size: 1.5em;
+  text-shadow: 3px 3px 3px black;
+  width: 1.5em;
 }
 
 /* Media queries to handle various device widths */
