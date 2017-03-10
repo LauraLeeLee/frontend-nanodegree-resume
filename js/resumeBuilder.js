@@ -9,7 +9,7 @@ var bio = {
       "github": "https://github.com/LauraLeeLee",
       "location": "Pittsburgh"
     },
-    "skills": ["HTML","CSS","JavaScript","PhotoShop"]
+    "skills": ["HTML","CSS","JavaScript","Photoshop"]
 };
 
 var education = {
@@ -210,7 +210,7 @@ projects.display();
 var imageLarge = document.getElementsByClassName("larger-image");
 imageLarge.onclick = function() {
       imageLarge.style.width = "20vw";
-}
+};
 
 function inName(name) {
   name = name.trim().split(" ");

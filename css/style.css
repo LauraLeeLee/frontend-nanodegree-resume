@@ -178,9 +178,18 @@ ul {
   text-align: center;
 }
 
-/*#social li {
-  display: inline-block;
-}*/
+#lets-connect li {
+  padding: 0;
+  margin: 0;
+}
+
+#footerContacts {
+  justify-content: center;
+}
+
+#footerContacts li {
+    padding: 10px;
+}
 
 .welcome-message {
   font-style: italic;
