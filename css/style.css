@@ -124,7 +124,7 @@ em {
 }
 
 img {
-  padding: 10px;
+  margin: 5px;
 }
 
 span {
@@ -262,6 +262,10 @@ ul {
 .project-entry p {
   color: #fff;
   font-size: 1.05em;
+}
+
+.project-entry img {
+  border: 3px solid #000;
 }
 
 .flex-box {
