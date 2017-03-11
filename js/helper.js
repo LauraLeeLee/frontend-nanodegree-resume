@@ -40,7 +40,7 @@ var HTMLprojectStart = '<div class="project-entry blue"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%" class="%larger-image%">';
+var HTMLprojectImage = '<img src="%data%" id="%id">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -57,6 +57,14 @@ var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
+
+var customModalHTML =
+  '<div id = "proj1-modal" class="modal">' +
+    '<div class = "modal-content">'+
+      '<span class = "close">$times;</span>' +
+      '<img src="%data%" id="%id">' +
+    '</div' +
+  '</div>';
 
 
 /*

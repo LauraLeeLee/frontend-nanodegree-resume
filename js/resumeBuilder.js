@@ -79,28 +79,30 @@ var work = {
 
 
 var projects = {
-     "projects": [
-       {
-       "title": "Portfolio Project",
-       "dates": "December, 2016",
-       "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
-       "images": ["images/portfolio1-250_xsmall.png", "images/porfolio2-250_xsmall.png"
-        ]
-      },
-      {
-      "title": "Roma",
-      "dates": "August 2015",
-      "description": "Journey through the Eternal City",
-      "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg","images/rome3-250_xsmall.jpg"
-       ]
-      },
-      {
-       "title": "Fiorenze",
-       "dates": "September 2011",
-       "description": "Discovery of Renessaince history",
-       "images":["images/florence3-250_xsmall.jpg","images/florence4-250_xsmall.jpg","images/florence5-250_xsmall.jpg"
-        ]
-     }
+  "projects": [
+    {
+    "title": "Portfolio Project",
+    "dates": "December, 2016",
+    "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
+    "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"
+    ]
+    },
+
+    {
+    "title": "Roma",
+    "dates": "August 2015",
+    "description": "Journey through the Eternal City",
+    "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg","images/rome3-250_xsmall.jpg"
+    ]
+    },
+
+    {
+    "title": "Fiorenze",
+    "dates": "September 2011",
+    "description": "Discovery of Renessaince history",
+    "images":["images/florence3-250_xsmall.jpg","images/florence4-250_xsmall.jpg","images/florence5-250_xsmall.jpg"
+    ]
+    }
   ]
 };
 
@@ -206,11 +208,6 @@ projects.display = function(){
   }
 };
 projects.display();
-
-var imageLarge = document.getElementsByClassName("larger-image");
-imageLarge.onclick = function() {
-      imageLarge.style.width = "20vw";
-};
 
 function inName(name) {
   name = name.trim().split(" ");
