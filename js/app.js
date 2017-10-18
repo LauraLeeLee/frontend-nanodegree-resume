@@ -1,6 +1,6 @@
 //------------Model
 var model = {
-  bio: [ {
+  bio:  {
       "name": "Laura Logan",
       "role": "Frontend Web Developer",
       "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
@@ -12,9 +12,10 @@ var model = {
         "location": "Pittsburgh"
       },
       "skills": ["HTML","CSS","JavaScript","Photoshop"]
-  ];
+    },
 
-  education: [
+
+  education: {
       "schools": [
         {
         "name":"University of Pittsburgh",
@@ -57,9 +58,10 @@ var model = {
       "url":"http://www.ed2go.com"
       }
       ]
-  ];
+    },
 
-  work: [
+
+  work: {
     "jobs":[
       {
       "employer": "Centre for Dentistry",
@@ -76,101 +78,89 @@ var model = {
       "description":"Provide prophylaxis, root planing and scaling, take necessary xrays, patient education, treatment presentation."
     }
     ]
-  ];
+  },
 
-  projects: [
+  projects: {
     "projects": [
       {
       "title": "Portfolio Project",
       "dates": "December, 2016",
       "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
-      "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"
-      ]
+      "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
+
       },
 
       {
       "title": "Roma",
       "dates": "August 2015",
       "description": "Journey through the Eternal City",
-      "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg","images/rome3-250_xsmall.jpg"
-      ]
+      "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg","images/rome3-250_xsmall.jpg"]
       },
 
       {
       "title": "Fiorenze",
       "dates": "September 2011",
       "description": "Discovery of Renessaince history",
-      "images":["images/florence3-250_xsmall.jpg","images/florence4-250_xsmall.jpg","images/florence5-250_xsmall.jpg"
-      ]
-      }
-    ];
+      "images":["images/florence3-250_xsmall.jpg","images/florence4-250_xsmall.jpg","images/florence5-250_xsmall.jpg"]
+    }]
+  },
+
 };
 
 //----------Octopus
 var octopus = {
 
+  getFormattedBio: {
+    formattedName:  HTMLheaderName.replace("%data%", model.bio.name),
+    formattedRole : HTMLheaderRole.replace("%data%", model.bio.role),
+    formattedWelcomeMsg: HTMLwelcomeMsg.replace("%data%",model.bio.welcomeMessage),
+    formattedMobile: HTMLmobile.replace("%data%", model.bio.contacts.mobile),
+    formattedGithub: HTMLgithub.replace("%data%", model.bio.contacts.github),
+    formattedEmail: HTMLemail.replace("%data%", model.bio.contacts.email),
+    formattedLocation: HTMLlocation.replace("%data%", model.bio.contacts.location),
+    formattedBioPic: HTMLbioPic.replace("%data%", model.bio.biopic),
+  },
+  getFormattedSkills: function(){
+
+  },
+
+  init: function () {
+    bioView.render();
+  }
+
 };
 
-
-var
 
 
 //------------Views
 var bioView = {
-  init: function(){
-    var HTMLheaderName = '<h1 id="name">%data%</h1>';
-    var HTMLheaderRole = '<span>%data%</span><hr>';
 
-    var HTMLcontactGeneric = '<li class="flex-item"><span class="blue-text">%contact%</span><span class="white-text">%data%</span></li>';
-    var HTMLmobile = '<li class="flex-item"><span class="blue-text">mobile</span><span class="white-text">%data%</span></li>';
-    var HTMLemail = '<li class="flex-item"><span class="blue-text">email</span><span class="white-text">%data%</span></li>';
-    var HTMLtwitter = '<li class="flex-item"><span class="blue-text">twitter</span><span class="white-text">%data%</span></li>';
-    var HTMLgithub = '<li class="flex-item"><span class="blue-text">github</span><span class="white-text">%data%</span></li>';
-    var HTMLblog = '<li class="flex-item"><span class="blue-text">blog</span><span class="white-text">%data%</span></li>';
-    var HTMLlocation = '<li class="flex-item"><span class="blue-text">location</span><span class="white-text">%data%</span></li>';
-
-    var HTMLbioPic = '<img src="%data%" class="biopic">';
-    var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
-
-    var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
-    var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+  render: function(){
+    var header = $("#header");
+    header.prepend(octopus.getFormattedBio.formattedName);
+    header.prepend(octopus.getFormattedBio.formattedRole);
+    console.log(octopus.getFormattedBio.formattedRole);
+    header.prepend(octopus.getFormattedBio.formattedWelcomeMsg);
+    var topContacts = $("#topContacts");
+    topContacts.prepend(octopus.getFormattedBio.formattedMobile);
+    topContacts.prepend(octopus.getFormattedBio.formattedGithub);
+    topContacts.prepend(octopus.getFormattedBio.formattedEmail);
+    topContacts.prepend(octopus.getFormattedBio.formattedLocation);
+      header.prepend(octopus.getFormattedBio.formattedBioPic);
   }
 };
 
 var workView = {
-  init: function(){
-    var HTMLworkStart = '<div class="work-entry"></div>';
-    var HTMLworkEmployer = '<a href="#">%data%';
-    var HTMLworkTitle = ' - %data%</a>';
-    var HTMLworkDates = '<div class="date-text">%data%</div>';
-    var HTMLworkLocation = '<div class="location-text">%data%</div>';
-    var HTMLworkDescription = '<p><br>%data%</p>';
-  }
+
+
 };
 
 var projectView = {
-  init: function(){
-    var HTMLprojectStart = '<div class="project-entry blue"></div>';
-    var HTMLprojectTitle = '<a href="#">%data%</a>';
-    var HTMLprojectDates = '<div class="date-text">%data%</div>';
-    var HTMLprojectDescription = '<p><br>%data%</p>';
-    var HTMLprojectImage = '<img src="%data%" id="%id">';
-  }
+
 };
 
 var educationView = {
-  init: function(){
-    var HTMLschoolStart = '<div class="education-entry"></div>';
-    var HTMLschoolName = '<a href="#">%data%';
-    var HTMLschoolDegree = ' -- %data%</a>';
-    var HTMLschoolDates = '<div class="date-text">%data%</div>';
-    var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-    var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
-    var HTMLonlineClasses = '<h3>Online Classes</h3>';
-    var HTMLonlineTitle = '<a href="#">%data%';
-    var HTMLonlineSchool = ' - %data%</a>';
-    var HTMLonlineDates = '<div class="date-text">%data%</div>';
-    var HTMLonlineURL = '<br><a href="#">%data%</a>';  
-  }
 };
+
+octopus.init();
