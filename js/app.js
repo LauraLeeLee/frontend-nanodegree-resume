@@ -121,6 +121,9 @@ var octopus = {
     var educationData = this.getModelData('education');
     educationView.render(educationData);
 
+    var projectData = this.getModelData('projects');
+    projectView.render(projectData);
+
   },
 
 };
@@ -174,26 +177,42 @@ var workView = {
 
 var educationView = {
   render: function(educationData){
-  var _educationContainer = $('#education');
+    var _educationContainer = $('#education');
     var _educationEntry = $(HTMLschoolStart);
-  educationData.schools.forEach(function(school){
 
-    _educationEntry.append(HTMLschoolDegree.replace("%data%",school.degree));
-    _educationEntry.append(HTMLschoolMajor.replace("%data%",school.majors));
-    _educationEntry.append(HTMLschoolDates.replace("%data%",school.dates));
-    _educationEntry.append(HTMLschoolName.replace("%data%",school.name));
-    _educationEntry.append(HTMLschoolLocation.replace("%data%",school.location));
-    _educationContainer.append(_educationEntry);
-  });
+    educationData.schools.forEach(function(school){
+      _educationEntry.append(HTMLschoolDegree.replace("%data%",school.degree));
+      _educationEntry.append(HTMLschoolMajor.replace("%data%",school.majors));
+      _educationEntry.append(HTMLschoolDates.replace("%data%",school.dates));
+      _educationEntry.append(HTMLschoolName.replace("%data%",school.name));
+      _educationEntry.append(HTMLschoolLocation.replace("%data%",school.location));
+      _educationContainer.append(_educationEntry);
+   });
 
-  _educationContainer.append(HTMLonlineClasses);
-  educationData.onlineCourses.forEach(function(course){
-    _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
-    _educationEntry.append(HTMLonlineSchool.replace("%data%",course.school));
-    _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
-    _educationEntry.append(HTMLonlineDates.replace("%data%", course.dates));
+    _educationContainer.append(HTMLonlineClasses);
+    educationData.onlineCourses.forEach(function(course){
+      _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
+      _educationEntry.append(HTMLonlineSchool.replace("%data%",course.school));
+      _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
+      _educationEntry.append(HTMLonlineDates.replace("%data%", course.dates));
+    });
+  }
+};
 
-  });
+var projectView = {
+  render: function(projectData){
+    var _projectContainer = $('#projects');
+    var _projectEntry = $(HTMLprojectStart);
+    for(var i = 0; i < projectData.projects.length; i++){
+
+      _projectEntry.append(HTMLprojectTitle.replace("%data%",projectData.projects[i].title));
+      _projectEntry.append(HTMLprojectDates.replace("%data%",projectData.projects[i].dates));
+      _projectEntry.append(HTMLprojectDescription.replace("%data%",projectData.projects[i].description));
+    for(var j=0; j<projectData.projects[i].images.length; j++){
+      _projectEntry.append(HTMLprojectImage.replace("%data%",projectData.projects[i].images[j]));
+    };
+    _projectContainer.append(_projectEntry);
+  };
 
   }
 };
