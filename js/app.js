@@ -208,13 +208,18 @@ var projectView = {
       _projectEntry.append(HTMLprojectTitle.replace("%data%",projectData.projects[i].title));
       _projectEntry.append(HTMLprojectDates.replace("%data%",projectData.projects[i].dates));
       _projectEntry.append(HTMLprojectDescription.replace("%data%",projectData.projects[i].description));
-    for(var j=0; j<projectData.projects[i].images.length; j++){
-      _projectEntry.append(HTMLprojectImage.replace("%data%",projectData.projects[i].images[j]));
-    };
+      for(var j=0; j<projectData.projects[i].images.length; j++){
+        _projectEntry.append(HTMLprojectImage.replace("%data%",projectData.projects[i].images[j]));
+      };
     _projectContainer.append(_projectEntry);
-  };
-
+    };
   }
 };
+
+var mapView = {
+  render: function(mapData){
+
+  };
+}
 
 octopus.init();
