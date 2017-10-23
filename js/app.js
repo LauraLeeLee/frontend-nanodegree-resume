@@ -187,7 +187,7 @@ var educationView = {
   });
 
   _educationContainer.append(HTMLonlineClasses);
-  education.Data.onlineCourses.forEach(function(course){
+  educationData.onlineCourses.forEach(function(course){
     _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
     _educationEntry.append(HTMLonlineSchool.replace("%data%",course.school));
     _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
