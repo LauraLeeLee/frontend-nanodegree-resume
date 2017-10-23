@@ -1,166 +1,201 @@
 //------------Model
 var model = {
-  bio:  {
-      "name": "Laura Logan",
-      "role": "Frontend Web Developer",
-      "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
-      "biopic":"images/me-400_small.jpg",
-      "contacts": {
-        "mobile": "724-272-xxxx",
-        "email": "LauraRDH@aol.com",
-        "github": "https://github.com/LauraLeeLee",
-        "location": "Pittsburgh"
-      },
-      "skills": ["HTML","CSS","JavaScript","Photoshop"]
+  bio: {
+    "name": "Laura Logan",
+    "role": "Frontend Web Developer",
+    "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
+    "biopic": "images/me-400_small.jpg",
+    "contacts": {
+      "mobile": "724-272-xxxx",
+      "email": "LauraRDH@aol.com",
+      "github": "https://github.com/LauraLeeLee",
+      "location": "Pittsburgh"
     },
+    "skills": ["HTML", "CSS", "JavaScript", "Photoshop"]
+  },
 
 
   education: {
-      "schools": [
-        {
-        "name":"University of Pittsburgh",
-        "location": "Pittsburgh, PA",
-        "degree": "Associate",
-        "dates": "1986-1988",
-        "url":"http://www.dental.pitt.edu/students/dental-hygiene-program",
-        "majors": ["Dental Hygiene"]
-        }
-      ],
-      "onlineCourses": [
-        {
+    "schools": [{
+      "name": "University of Pittsburgh",
+      "location": "Pittsburgh, PA",
+      "degree": "Associate",
+      "dates": "1986-1988",
+      "url": "http://www.dental.pitt.edu/students/dental-hygiene-program",
+      "majors": ["Dental Hygiene"]
+    }],
+    "onlineCourses": [{
         "title": "Frontend Web Development",
-        "school":"Udacity",
-        "url":"https://www.udacity.com",
+        "school": "Udacity",
+        "url": "https://www.udacity.com",
         "dates": "2016-2017"
-        },
-        {
+      },
+      {
         "title": "Intro to JavaScript",
-        "school":"Code School",
+        "school": "Code School",
         "dates": "January 2017",
-        "url":"http//www.codeschool.com"
-       },
-        {
+        "url": "http//www.codeschool.com"
+      },
+      {
         "title": "Introduction to CSS3 and HTML5",
-        "school":"Ed2Go",
+        "school": "Ed2Go",
         "dates": "March 2016-April 2016",
-        "url":"http://www.ed2go.com"
+        "url": "http://www.ed2go.com"
       },
       {
-      "title": "Intermediate CSS3 and HTML5",
-      "school":"Ed2Go",
-      "dates": "May 2016-June 2016",
-      "url":"http://www.ed2go.com"
+        "title": "Intermediate CSS3 and HTML5",
+        "school": "Ed2Go",
+        "dates": "May 2016-June 2016",
+        "url": "http://www.ed2go.com"
       },
       {
-      "title": "Introduction to JavaScript",
-      "school":"Ed2Go",
-      "dates": "July 2016-August 2016",
-      "url":"http://www.ed2go.com"
+        "title": "Introduction to JavaScript",
+        "school": "Ed2Go",
+        "dates": "July 2016-August 2016",
+        "url": "http://www.ed2go.com"
       }
-      ]
-    },
+    ]
+  },
 
 
   work: {
-    "jobs":[
+    "jobs": [{
+        "employer": "Centre for Dentistry",
+        "title": "Office Manager/Dental Marketer",
+        "location": "Cranberry Twp, PA",
+        "dates": "1993-present",
+        "description": "Help manage daily flow of dental office. Interview and assist in the managment of employees. Manage marketing for new and existing patients."
+      },
       {
-      "employer": "Centre for Dentistry",
-      "title": "Office Manager/Dental Marketer",
-      "location": "Cranberry Twp, PA",
-      "dates": "1993-present",
-      "description":"Help manage daily flow of dental office. Interview and assist in the managment of employees. Manage marketing for new and existing patients."
-    },
-    {
-      "employer": "Dr. Irving Kraft",
-      "title": "Dental Hygienist",
-      "location": "Philadelphia, PA",
-      "dates": "1988-1993",
-      "description":"Provide prophylaxis, root planing and scaling, take necessary xrays, patient education, treatment presentation."
-    }
+        "employer": "Dr. Irving Kraft",
+        "title": "Dental Hygienist",
+        "location": "Philadelphia, PA",
+        "dates": "1988-1993",
+        "description": "Provide prophylaxis, root planing and scaling, take necessary xrays, patient education, treatment presentation."
+      }
     ]
   },
 
   projects: {
-    "projects": [
-      {
-      "title": "Portfolio Project",
-      "dates": "December, 2016",
-      "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
-      "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
+    "projects": [{
+        "title": "Portfolio Project",
+        "dates": "December, 2016",
+        "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
+        "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
 
       },
 
       {
-      "title": "Roma",
-      "dates": "August 2015",
-      "description": "Journey through the Eternal City",
-      "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg","images/rome3-250_xsmall.jpg"]
+        "title": "Roma",
+        "dates": "August 2015",
+        "description": "Journey through the Eternal City",
+        "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg", "images/rome3-250_xsmall.jpg"]
       },
 
       {
-      "title": "Fiorenze",
-      "dates": "September 2011",
-      "description": "Discovery of Renessaince history",
-      "images":["images/florence3-250_xsmall.jpg","images/florence4-250_xsmall.jpg","images/florence5-250_xsmall.jpg"]
-    }]
+        "title": "Fiorenze",
+        "dates": "September 2011",
+        "description": "Discovery of Renessaince history",
+        "images": ["images/florence3-250_xsmall.jpg", "images/florence4-250_xsmall.jpg", "images/florence5-250_xsmall.jpg"]
+      }
+    ]
   },
 
 };
 
-//----------Octopus
 var octopus = {
-
-  getFormattedBio: {
-    formattedName:  HTMLheaderName.replace("%data%", model.bio.name),
-    formattedRole : HTMLheaderRole.replace("%data%", model.bio.role),
-    formattedWelcomeMsg: HTMLwelcomeMsg.replace("%data%",model.bio.welcomeMessage),
-    formattedMobile: HTMLmobile.replace("%data%", model.bio.contacts.mobile),
-    formattedGithub: HTMLgithub.replace("%data%", model.bio.contacts.github),
-    formattedEmail: HTMLemail.replace("%data%", model.bio.contacts.email),
-    formattedLocation: HTMLlocation.replace("%data%", model.bio.contacts.location),
-    formattedBioPic: HTMLbioPic.replace("%data%", model.bio.biopic),
-  },
-  getFormattedSkills: function(){
-
+  // accesses the model for specific data sections , returns an object
+  getModelData: function(data_section) {
+    return model[data_section];
   },
 
-  init: function () {
-    bioView.render();
-  }
+  //calls initial view render functions to render to the page
+  init: function() {
+    //render bio section
+    var bioData = this.getModelData('bio');
+    bioView.render(bioData);
+    //render work section
+    var workData = this.getModelData('work');
+    workView.render(workData);
+
+    var educationData = this.getModelData('education');
+    educationView.render(educationData);
+
+  },
 
 };
 
-
-
-//------------Views
+//-----------------View
 var bioView = {
+  render: function(bioData){
+    formattedName = HTMLheaderName.replace("%data%", bioData.name);
+    formattedRole =  HTMLheaderRole.replace("%data%", bioData.role);
+    formattedWelcomeMsg =  HTMLwelcomeMsg.replace("%data%", bioData.welcomeMessage);
+    formattedMobile =  HTMLmobile.replace("%data%", bioData.contacts.mobile);
+    formattedGithub =  HTMLgithub.replace("%data%", bioData.contacts.github);
+    formattedEmail =  HTMLemail.replace("%data%", bioData.contacts.email);
+    formattedLocation =  HTMLlocation.replace("%data%", bioData.contacts.location);
+    formattedBioPic =  HTMLbioPic.replace("%data%", bioData.biopic);
 
-  render: function(){
     var header = $("#header");
-    header.prepend(octopus.getFormattedBio.formattedName);
-    header.prepend(octopus.getFormattedBio.formattedRole);
-    console.log(octopus.getFormattedBio.formattedRole);
-    header.prepend(octopus.getFormattedBio.formattedWelcomeMsg);
+    header.prepend(formattedName);
+    header.prepend(formattedRole);
+    header.prepend(formattedWelcomeMsg);
+
     var topContacts = $("#topContacts");
-    topContacts.prepend(octopus.getFormattedBio.formattedMobile);
-    topContacts.prepend(octopus.getFormattedBio.formattedGithub);
-    topContacts.prepend(octopus.getFormattedBio.formattedEmail);
-    topContacts.prepend(octopus.getFormattedBio.formattedLocation);
-      header.prepend(octopus.getFormattedBio.formattedBioPic);
+    topContacts.prepend(formattedMobile);
+    topContacts.prepend(formattedGithub);
+    topContacts.prepend(formattedEmail);
+    topContacts.prepend(formattedLocation);
+    header.prepend(formattedBioPic);
+
+    header.append(HTMLskillsStart);
+    var _skillsContainer = $('#skills');
+    bioData.skills.forEach(function(skill){
+      _skillsContainer.append(HTMLskills.replace("%data%", skill));
+    });
   }
 };
 
 var workView = {
-
-
-};
-
-var projectView = {
-
+  render: function(workData){
+  var _workContainer = $('#workExperience');
+  workData.jobs.forEach(function(job){
+    var _workEntry = $(HTMLworkStart);
+    _workEntry.append(HTMLworkEmployer.replace("%data%",job.employer));
+    _workEntry.append(HTMLworkTitle.replace("%data%",job.title));
+    _workEntry.append(HTMLworkLocation.replace("%data%",job.location));
+    _workEntry.append(HTMLworkDates.replace("%data%",job.dates));
+    _workEntry.append(HTMLworkDescription.replace("%data%",job.description));
+    _workContainer.append(_workEntry);
+  });
+ }
 };
 
 var educationView = {
+  render: function(educationData){
+  var _educationContainer = $('#education');
+    var _educationEntry = $(HTMLschoolStart);
+  educationData.schools.forEach(function(school){
 
+    _educationEntry.append(HTMLschoolDegree.replace("%data%",school.degree));
+    _educationEntry.append(HTMLschoolMajor.replace("%data%",school.majors));
+    _educationEntry.append(HTMLschoolDates.replace("%data%",school.dates));
+    _educationEntry.append(HTMLschoolName.replace("%data%",school.name));
+    _educationEntry.append(HTMLschoolLocation.replace("%data%",school.location));
+    _educationContainer.append(_educationEntry);
+  });
+
+  _educationContainer.append(HTMLonlineClasses);
+  education.Data.onlineCourses.forEach(function(course){
+    _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
+    _educationEntry.append(HTMLonlineSchool.replace("%data%",course.school));
+    _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
+    _educationEntry.append(HTMLonlineDates.replace("%data%", course.dates));
+
+  });
+
+  }
 };
 
 octopus.init();

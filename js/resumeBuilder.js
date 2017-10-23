@@ -108,7 +108,11 @@ var projects = {
 
 
 bio.display = function() {
+  //controller
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  //view- render function,
+  //for init part of view, selects the element
+
   $("#header").prepend(formattedRole);
 
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
