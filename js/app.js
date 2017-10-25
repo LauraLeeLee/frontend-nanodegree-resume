@@ -240,7 +240,7 @@ var mapView = {
   }
 };
 
-var intNameView = {
+var intButtonView = {
   init: function() {
     var self = this;
     $('#header').append(internationalizeButton);
@@ -255,6 +255,6 @@ var intNameView = {
     console.log(intName);
   }
 };
-intNameView.init();
+intButtonView.init();
 
 octopus.init();
