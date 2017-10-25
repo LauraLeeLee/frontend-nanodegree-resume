@@ -149,7 +149,7 @@ bio.display();
 
 work.display = function(){
   work.jobs.forEach(function(job) {
-    $("#workExperience").append(HTMLworkStart);
+      $("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
     var formattedWorkTitle = HTMLworkTitle.replace("%data%",job.title);
     var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
@@ -213,7 +213,10 @@ projects.display = function(){
 };
 projects.display();
 
-function inName(name) {
+
+//function to internationalize the name
+//changes last name to all caps
+function intName(name) {
   name = name.trim().split(" ");
   console.log(name);
   name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();

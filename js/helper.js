@@ -73,8 +73,8 @@ The Internationalize Names challenge found in the lesson Flow Control from JavaS
 $(document).ready(function() {
   $('button').click(function() {
     var $name = $('#name');
-    var iName = inName($name.text()) || function(){};
-    $name.html(iName);
+    var intName = intName($name.text()) || function(){};
+    $name.html(intName);
   });
 });
 
@@ -134,13 +134,13 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    locations.push(model.bio.contacts.location);
 
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    education.schools.forEach(function(school){
+    model.education.schools.forEach(function(school){
       locations.push(school.location);
     });
 
@@ -148,7 +148,7 @@ function initializeMap() {
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    work.jobs.forEach(function(job){
+    model.work.jobs.forEach(function(job){
       locations.push(job.location);
     });
 

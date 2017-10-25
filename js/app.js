@@ -103,6 +103,7 @@ var model = {
 
 };
 
+//------------------Octopus
 var octopus = {
   // accesses the model for specific data sections , returns an object
   getModelData: function(data_section) {
@@ -124,21 +125,38 @@ var octopus = {
     var projectData = this.getModelData('projects');
     projectView.render(projectData);
 
-  },
+    mapView.render();
+
+    var intButton = {
+        intName: function(name) {
+          //var newName = '';
+          var newName = name[0] + " " + name[1];
+          console.log(name);
+          //code to capitalize goes here
+          name = name.trim().split(" ");
+          console.log(name);
+          name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+          name[1] = name[1].toUpperCase();
+
+          //return name[0] + " " + name[1];
+          return newName;
+        }
+      }
+  }
 
 };
 
 //-----------------View
 var bioView = {
-  render: function(bioData){
+  render: function(bioData) {
     formattedName = HTMLheaderName.replace("%data%", bioData.name);
-    formattedRole =  HTMLheaderRole.replace("%data%", bioData.role);
-    formattedWelcomeMsg =  HTMLwelcomeMsg.replace("%data%", bioData.welcomeMessage);
-    formattedMobile =  HTMLmobile.replace("%data%", bioData.contacts.mobile);
-    formattedGithub =  HTMLgithub.replace("%data%", bioData.contacts.github);
-    formattedEmail =  HTMLemail.replace("%data%", bioData.contacts.email);
-    formattedLocation =  HTMLlocation.replace("%data%", bioData.contacts.location);
-    formattedBioPic =  HTMLbioPic.replace("%data%", bioData.biopic);
+    formattedRole = HTMLheaderRole.replace("%data%", bioData.role);
+    formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bioData.welcomeMessage);
+    formattedMobile = HTMLmobile.replace("%data%", bioData.contacts.mobile);
+    formattedGithub = HTMLgithub.replace("%data%", bioData.contacts.github);
+    formattedEmail = HTMLemail.replace("%data%", bioData.contacts.email);
+    formattedLocation = HTMLlocation.replace("%data%", bioData.contacts.location);
+    formattedBioPic = HTMLbioPic.replace("%data%", bioData.biopic);
 
     var header = $("#header");
     header.prepend(formattedName);
@@ -154,45 +172,45 @@ var bioView = {
 
     header.append(HTMLskillsStart);
     var _skillsContainer = $('#skills');
-    bioData.skills.forEach(function(skill){
+    bioData.skills.forEach(function(skill) {
       _skillsContainer.append(HTMLskills.replace("%data%", skill));
     });
   }
 };
 
 var workView = {
-  render: function(workData){
-  var _workContainer = $('#workExperience');
-  workData.jobs.forEach(function(job){
-    var _workEntry = $(HTMLworkStart);
-    _workEntry.append(HTMLworkEmployer.replace("%data%",job.employer));
-    _workEntry.append(HTMLworkTitle.replace("%data%",job.title));
-    _workEntry.append(HTMLworkLocation.replace("%data%",job.location));
-    _workEntry.append(HTMLworkDates.replace("%data%",job.dates));
-    _workEntry.append(HTMLworkDescription.replace("%data%",job.description));
-    _workContainer.append(_workEntry);
-  });
- }
+  render: function(workData) {
+    var _workContainer = $('#workExperience');
+    workData.jobs.forEach(function(job) {
+      var _workEntry = $(HTMLworkStart);
+      _workEntry.append(HTMLworkEmployer.replace("%data%", job.employer));
+      _workEntry.append(HTMLworkTitle.replace("%data%", job.title));
+      _workEntry.append(HTMLworkLocation.replace("%data%", job.location));
+      _workEntry.append(HTMLworkDates.replace("%data%", job.dates));
+      _workEntry.append(HTMLworkDescription.replace("%data%", job.description));
+      _workContainer.append(_workEntry);
+    });
+  }
 };
 
 var educationView = {
-  render: function(educationData){
+  render: function(educationData) {
     var _educationContainer = $('#education');
     var _educationEntry = $(HTMLschoolStart);
 
-    educationData.schools.forEach(function(school){
-      _educationEntry.append(HTMLschoolDegree.replace("%data%",school.degree));
-      _educationEntry.append(HTMLschoolMajor.replace("%data%",school.majors));
-      _educationEntry.append(HTMLschoolDates.replace("%data%",school.dates));
-      _educationEntry.append(HTMLschoolName.replace("%data%",school.name));
-      _educationEntry.append(HTMLschoolLocation.replace("%data%",school.location));
+    educationData.schools.forEach(function(school) {
+      _educationEntry.append(HTMLschoolDegree.replace("%data%", school.degree));
+      _educationEntry.append(HTMLschoolMajor.replace("%data%", school.majors));
+      _educationEntry.append(HTMLschoolDates.replace("%data%", school.dates));
+      _educationEntry.append(HTMLschoolName.replace("%data%", school.name));
+      _educationEntry.append(HTMLschoolLocation.replace("%data%", school.location));
       _educationContainer.append(_educationEntry);
-   });
+    });
 
     _educationContainer.append(HTMLonlineClasses);
-    educationData.onlineCourses.forEach(function(course){
+    educationData.onlineCourses.forEach(function(course) {
       _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
-      _educationEntry.append(HTMLonlineSchool.replace("%data%",course.school));
+      _educationEntry.append(HTMLonlineSchool.replace("%data%", course.school));
       _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
       _educationEntry.append(HTMLonlineDates.replace("%data%", course.dates));
     });
@@ -200,26 +218,43 @@ var educationView = {
 };
 
 var projectView = {
-  render: function(projectData){
+  render: function(projectData) {
     var _projectContainer = $('#projects');
     var _projectEntry = $(HTMLprojectStart);
-    for(var i = 0; i < projectData.projects.length; i++){
+    for (var i = 0; i < projectData.projects.length; i++) {
 
-      _projectEntry.append(HTMLprojectTitle.replace("%data%",projectData.projects[i].title));
-      _projectEntry.append(HTMLprojectDates.replace("%data%",projectData.projects[i].dates));
-      _projectEntry.append(HTMLprojectDescription.replace("%data%",projectData.projects[i].description));
-      for(var j=0; j<projectData.projects[i].images.length; j++){
-        _projectEntry.append(HTMLprojectImage.replace("%data%",projectData.projects[i].images[j]));
+      _projectEntry.append(HTMLprojectTitle.replace("%data%", projectData.projects[i].title));
+      _projectEntry.append(HTMLprojectDates.replace("%data%", projectData.projects[i].dates));
+      _projectEntry.append(HTMLprojectDescription.replace("%data%", projectData.projects[i].description));
+      for (var j = 0; j < projectData.projects[i].images.length; j++) {
+        _projectEntry.append(HTMLprojectImage.replace("%data%", projectData.projects[i].images[j]));
       };
-    _projectContainer.append(_projectEntry);
+      _projectContainer.append(_projectEntry);
     };
   }
 };
 
 var mapView = {
-  render: function(mapData){
+  render: function(mapData) {
+    $("#mapDiv").append(googleMap);
+  }
+};
 
-  };
-}
+var intNameView = {
+  init: function() {
+    var self = this;
+    $('#header').append(internationalizeButton);
+    $('button').click(function() {
+      self.render();
+    });
+  },
+  render: function() {
+    var $name = $('#name');
+    var intName = octopus.intButton.intName($name.text());
+    $name.html(intName);
+    console.log(intName);
+  }
+};
+intNameView.init();
 
 octopus.init();
