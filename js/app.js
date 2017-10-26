@@ -187,9 +187,10 @@ var educationView = {
     var _educationEntry = $(HTMLschoolStart);
     var _educationEntry_last = $(".education-entry:last");
 
-    _educationContainer.append(_educationEntry);
+    //_educationContainer.append(_educationEntry);
 
     educationData.schools.forEach(function(school) {
+      _educationContainer.append(_educationEntry);
       _educationEntry.append(HTMLschoolName.replace("%data%", school.name));
       _educationEntry.append(HTMLschoolDates.replace("%data%", school.dates));
       _educationEntry.append(HTMLschoolMajor.replace("%data%", school.majors));
@@ -200,6 +201,7 @@ var educationView = {
 
     _educationEntry.append(HTMLonlineClasses);
     educationData.onlineCourses.forEach(function(course) {
+      _educationContainer.append(_educationEntry);
       _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
       _educationEntry.append(HTMLonlineSchool.replace("%data%", course.school));
       _educationEntry.append(HTMLonlineDates.replace("%data%", course.dates));
