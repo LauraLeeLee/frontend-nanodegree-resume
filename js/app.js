@@ -127,22 +127,10 @@ var octopus = {
 
     mapView.render();
 
-    var intButton = {
-        intName: function(name) {
-          //var newName = '';
-          var newName = name[0] + " " + name[1];
-          console.log(name);
-          //code to capitalize goes here
-          name = name.trim().split(" ");
-          console.log(name);
-          name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
-          name[1] = name[1].toUpperCase();
+  },
 
-          //return name[0] + " " + name[1];
-          return newName;
-        }
-      }
-  }
+
+
 
 };
 
@@ -197,22 +185,25 @@ var educationView = {
   render: function(educationData) {
     var _educationContainer = $('#education');
     var _educationEntry = $(HTMLschoolStart);
+    var _educationEntry_last = $(".education-entry:last");
+
+    _educationContainer.append(_educationEntry);
 
     educationData.schools.forEach(function(school) {
-      _educationEntry.append(HTMLschoolDegree.replace("%data%", school.degree));
-      _educationEntry.append(HTMLschoolMajor.replace("%data%", school.majors));
-      _educationEntry.append(HTMLschoolDates.replace("%data%", school.dates));
       _educationEntry.append(HTMLschoolName.replace("%data%", school.name));
+      _educationEntry.append(HTMLschoolDates.replace("%data%", school.dates));
+      _educationEntry.append(HTMLschoolMajor.replace("%data%", school.majors));
+      _educationEntry.append(HTMLschoolDegree.replace("%data%", school.degree));
       _educationEntry.append(HTMLschoolLocation.replace("%data%", school.location));
-      _educationContainer.append(_educationEntry);
+
     });
 
-    _educationContainer.append(HTMLonlineClasses);
+    _educationEntry.append(HTMLonlineClasses);
     educationData.onlineCourses.forEach(function(course) {
       _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
       _educationEntry.append(HTMLonlineSchool.replace("%data%", course.school));
-      _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
       _educationEntry.append(HTMLonlineDates.replace("%data%", course.dates));
+      _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
     });
   }
 };
@@ -241,6 +232,19 @@ var mapView = {
 };
 
 var intButtonView = {
+  intName: function(name) {
+    var newName = '';
+
+    console.log(name);
+    //code to capitalize goes here
+    name = name.trim().split(" ");
+    console.log(name);
+    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+    name[1] = name[1].toUpperCase();
+
+    return name[0] + " " + name[1];
+    //return newName;
+  },
   init: function() {
     var self = this;
     $('#header').append(internationalizeButton);
@@ -250,10 +254,11 @@ var intButtonView = {
   },
   render: function() {
     var $name = $('#name');
-    var intName = octopus.intButton.intName($name.text());
+    var intName = intButtonView.intName($name.text());
     $name.html(intName);
     console.log(intName);
-  }
+  },
+
 };
 intButtonView.init();
 
