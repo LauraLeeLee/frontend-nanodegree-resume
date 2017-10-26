@@ -191,11 +191,11 @@ var educationView = {
 
     educationData.schools.forEach(function(school) {
       _educationContainer.append(_educationEntry);
-      _educationEntry.append(HTMLschoolName.replace("%data%", school.name));
-      _educationEntry.append(HTMLschoolDates.replace("%data%", school.dates));
-      _educationEntry.append(HTMLschoolMajor.replace("%data%", school.majors));
-      _educationEntry.append(HTMLschoolDegree.replace("%data%", school.degree));
-      _educationEntry.append(HTMLschoolLocation.replace("%data%", school.location));
+      _educationEntry.prepend(HTMLschoolDegree.replace("%data%", school.degree));
+      _educationEntry.prepend(HTMLschoolMajor.replace("%data%", school.majors));
+      _educationEntry.prepend(HTMLschoolDates.replace("%data%", school.dates));
+      _educationEntry.prepend(HTMLschoolName.replace("%data%", school.name));
+      _educationEntry.prepend(HTMLschoolLocation.replace("%data%", school.location));
 
     });
 
