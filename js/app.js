@@ -147,15 +147,15 @@ var bioView = {
     formattedBioPic = HTMLbioPic.replace("%data%", bioData.biopic);
 
     var header = $("#header");
-    header.prepend(formattedWelcomeMsg);
     header.prepend(formattedRole);
     header.prepend(formattedName);
+    header.append(formattedWelcomeMsg);
 
     var topContacts = $("#topContacts");
+    topContacts.prepend(formattedLocation);  
     topContacts.prepend(formattedMobile);
     topContacts.prepend(formattedGithub);
     topContacts.prepend(formattedEmail);
-    topContacts.prepend(formattedLocation);
     header.append(formattedBioPic);
 
     header.append(HTMLskillsStart);
