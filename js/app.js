@@ -184,12 +184,13 @@ var workView = {
 var educationView = {
   render: function(educationData) {
     var _educationContainer = $('#education');
-    var _educationEntry = $(HTMLschoolStart);
-    var _educationEntry_last = $(".education-entry:last");
+
+    //var _educationEntry_last = $(".education-entry:last");
 
     //_educationContainer.append(_educationEntry);
 
     educationData.schools.forEach(function(school) {
+      var _educationEntry = $(HTMLschoolStart);
       _educationContainer.append(_educationEntry);
       _educationEntry.prepend(HTMLschoolDegree.replace("%data%", school.degree));
       _educationEntry.prepend(HTMLschoolMajor.replace("%data%", school.majors));
@@ -199,8 +200,9 @@ var educationView = {
 
     });
 
-    _educationEntry.append(HTMLonlineClasses);
+    _educationContainer.append(HTMLonlineClasses);
     educationData.onlineCourses.forEach(function(course) {
+      var _educationEntry = $(HTMLschoolStart);
       _educationContainer.append(_educationEntry);
       _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
       _educationEntry.append(HTMLonlineSchool.replace("%data%", course.school));
@@ -234,11 +236,12 @@ var mapView = {
 };
 
 var intButtonView = {
+  //code that changes the name format
   intName: function(name) {
     var newName = '';
 
     console.log(name);
-    //code to capitalize goes here
+
     name = name.trim().split(" ");
     console.log(name);
     name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
@@ -247,10 +250,14 @@ var intButtonView = {
     return name[0] + " " + name[1];
     //return newName;
   },
+  //function to initialize button, appends button to page
+  //adds click handler
   init: function() {
     var self = this;
     $('#header').append(internationalizeButton);
     $('button').click(function() {
+      //self is used instead of this because of, not sure why, the 'this' could cause
+      //confusion in other areas of the code?
       self.render();
     });
   },
