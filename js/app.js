@@ -147,16 +147,16 @@ var bioView = {
     formattedBioPic = HTMLbioPic.replace("%data%", bioData.biopic);
 
     var header = $("#header");
-    header.prepend(formattedName);
-    header.prepend(formattedRole);
     header.prepend(formattedWelcomeMsg);
+    header.prepend(formattedRole);
+    header.prepend(formattedName);
 
     var topContacts = $("#topContacts");
     topContacts.prepend(formattedMobile);
     topContacts.prepend(formattedGithub);
     topContacts.prepend(formattedEmail);
     topContacts.prepend(formattedLocation);
-    header.prepend(formattedBioPic);
+    header.append(formattedBioPic);
 
     header.append(HTMLskillsStart);
     var _skillsContainer = $('#skills');
@@ -187,7 +187,7 @@ var educationView = {
 
     //var _educationEntry_last = $(".education-entry:last");
 
-    //_educationContainer.append(_educationEntry);
+
 
     educationData.schools.forEach(function(school) {
       var _educationEntry = $(HTMLschoolStart);
@@ -200,7 +200,7 @@ var educationView = {
 
     });
 
-    _educationContainer.append(HTMLonlineClasses);
+  _educationContainer.append(HTMLonlineClasses);
     educationData.onlineCourses.forEach(function(course) {
       var _educationEntry = $(HTMLschoolStart);
       _educationContainer.append(_educationEntry);
@@ -254,7 +254,7 @@ var intButtonView = {
   //adds click handler
   init: function() {
     var self = this;
-    $('#header').append(internationalizeButton);
+    $('#main').append(internationalizeButton);
     $('button').click(function() {
       //self is used instead of this because of, not sure why, the 'this' could cause
       //confusion in other areas of the code?
